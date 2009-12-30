@@ -11,8 +11,12 @@ get '/:number/json' do
 	if num < 0 or num > 10
 		'Bad Thing'	
 	else
-		myfs = (0..num).map{|x| {x => `fortune`} }
-		JSON.generate(myfs)	
+		myfs = (0..num).map{|x| [x,`fortune`] }
+		h = Hash.new
+		myfs.each do |idx|
+			h[idx[0]] = idx[1]
+		end
+		JSON.generate(h)	
 	end
 end	
 
