@@ -4,6 +4,8 @@
 		%title Fortune
 		%link{:rel => "stylesheet", :type => "text/css", :href => "/style.css", :media => "screen"}	
 	%body
-		#headblock Fortune
+		#headblock 
+			%h1 Fortune
 		#main
-			#{yield}
+			%pre
+				%h1 #{yield}
