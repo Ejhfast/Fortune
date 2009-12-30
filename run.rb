@@ -5,14 +5,10 @@ template :index do
 	'= fortune'
 end
 
-error NumberNotExist do
-	'Not a valid request'
-end
-
 get '/:number/json' do
 	num = params[:number].to_i
 	if num < 0 or num > 10
-		raise NumberNotExist
+		'Bad Thing'	
 	else
 		myfs = (0..num).map{|x| [x,`fortune`] }
 	end
