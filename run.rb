@@ -6,11 +6,12 @@ template :index do
 	'= fortune'
 end
 
-get '/:number/json' do
+get '/json/:number' do
 	num = params[:number].to_i
 	if num < 0 or num > 10
 		'Bad Thing'	
 	else
+		# Generate the fortunes, and put them in a hash
 		myfs = (0..num).map{|x| [x,`fortune`] }
 		h = Hash.new
 		myfs.each do |idx|
