@@ -6,5 +6,5 @@ template :index do
 end
 
 get '/*' do
-	haml :index, :locals => { :fortune => `ls` }
+	haml :index, :locals => { :fortune => `fortune` }
 end
