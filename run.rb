@@ -11,6 +11,7 @@ get '/:number/json' do
 		'Bad Thing'	
 	else
 		myfs = (0..num).map{|x| [x,`fortune`] }
+		'done'
 	end
 end	
 
