@@ -14,7 +14,7 @@ get '/:number/json' do
 	if num < 0 or num > 10
 		raise NumberNotExist
 	else
-		myfs = (0..num).map{|x| { 'number' => x, 'fortune' => `fortune`} }
+		myfs = (0..num).map{|x| [x,`fortune`] }
 	end
 end	
 
