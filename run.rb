@@ -2,7 +2,7 @@ require 'sinatra'
 require 'rubygems'
 
 template :index do
-	'%p= fortune'
+	'= fortune'
 end
 
 get '/*' do
